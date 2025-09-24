@@ -1,3 +1,13 @@
+:root {
+  --text-color: #000;
+  --bg-color: #f9fafb;
+  --primary-color: #596d48;
+  --invalid-color: #c13535;
+  --valid-color: #839de6;
+  --form-heading-color: #898e95;
+  --border-color: #e7e8ec;
+}
+
 /* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
@@ -77,4 +87,196 @@ html {
   font-size: 62.5%;
   font-family: 'Outfit', sans-serif;
   font-optical-sizing: auto;
+}
+body {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+}
+main {
+  display: flex;
+}
+.imageCont {
+  position: relative;
+  min-width: 30%;
+}
+.imageCont .bgPhoto {
+  height: 100%;
+  width: 100%;
+}
+.imageCont .branding {
+  position: absolute;
+  top: 20%;
+  display: flex;
+  background-color: #00000080;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.imageCont .branding img {
+  width: 80px;
+}
+.imageCont .branding h1 {
+  color: #fff;
+  font-size: 4.8rem;
+}
+.formCont {
+  display: flex;
+  padding-block: 2.4rem;
+  flex-direction: column;
+  gap: 1.6rem;
+  justify-content: center;
+}
+.formCont h2 {
+  font-size: 1.8rem;
+  margin-inline: 4.8rem;
+}
+.formCont form {
+  padding-block: 1.8rem;
+}
+.formCont .formBgCont {
+  padding-inline: 4.8rem;
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  margin-bottom: 2.4rem;
+  padding-block: 2.4rem;
+}
+.formCont form legend {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.formCont form .gridCont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 650px;
+  row-gap: 1.6rem;
+  column-gap: 3.2rem;
+  margin-top: 1.8rem;
+}
+.formCont form .gridCont .gridCell {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  font-size: 1.4rem;
+}
+.formCont form .gridCont .gridCell input {
+  border: 1px solid var(--border-color);
+  outline: none;
+  transition: border-color 0.3s;
+  border-radius: 4px;
+}
+.formCont form .gridCont .gridCell label {
+  font-size: 1.2rem;
+  color: var(--form-heading-color);
+}
+.createBtn {
+  color: #fff;
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  width: fit-content;
+  font-size: 1.6rem;
+  padding: 0.8rem 3.2rem;
+  margin-inline: 4.8rem;
+  outline: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.4s;
+  margin-bottom: 1.6rem;
+}
+.createBtn:hover {
+  background-color: #fff;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.createBtn:active {
+  background-color: var(--valid-color);
+  color: #fff;
+}
+.log {
+  font-size: 1.6rem;
+  margin-inline: 4.8rem;
+  display: flex;
+  gap: 2px;
+}
+.log a {
+  cursor: pointer;
+  transition: 0.4s;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.log a:hover {
+  color: var(--valid-color);
+}
+.log a:active {
+  transform: scale(1.1);
+}
+.formCont form .gridCont .gridCell input:valid:focus {
+  border-color: var(--valid-color);
+}
+
+.formCont form .gridCont .gridCell input:invalid:focus {
+  border-color: var(--invalid-color);
+}
+
+@media (max-width: 1000px) {
+  .formCont form .gridCont {
+    grid-template-columns: 1fr;
+  }
+  .formCont form .gridCont .gridCell {
+    width: 100%;
+    max-width: unset;
+  }
+
+  .formCont h2 {
+    text-align: center;
+  }
+  .imageCont {
+    position: relative;
+    height: unset;
+    min-width: 35%;
+  }
+}
+@media (max-width: 768px) {
+  .imageCont {
+    position: relative;
+    height: unset;
+    min-width: 40%;
+  }
+  .formCont h2 {
+    margin-inline: 1.6rem;
+  }
+  .formCont .formBgCont {
+    padding-inline: 2.4rem;
+    width: 100%;
+  }
+  .createBtn {
+    margin-inline: 1.6rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .log {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  main {
+    flex-direction: column;
+  }
+  .imageCont {
+    position: relative;
+    height: 300px;
+    min-width: 100%;
+  }
+  .formCont {
+    padding-block: 4.8rem;
+  }
+  .formCont h2,
+  .formCont form legend {
+    font-size: 1.6rem;
+  }
 }

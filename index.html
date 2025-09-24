@@ -14,7 +14,97 @@
 
   <body>
     <main>
-      <form action="">content</form>
+      <div class="imageCont">
+        <img
+          src="./images/photo-tree.avif"
+          alt="unsplash photo"
+          class="bgPhoto"
+        />
+        <div class="branding">
+          <img src="./images/odin-lined.png" alt="brand logo" />
+          <h1>ODIN</h1>
+        </div>
+      </div>
+      <div class="formCont">
+        <h2>
+          This is not a real online service! You know you need something like
+          this in your life to help you realize your deepest dreams. Sing up now
+          to get started.
+        </h2>
+        <h2>You know ou want to.</h2>
+        <form action="#" method="post">
+          <div class="formBgCont">
+            <legend>Let's do this!</legend>
+            <div class="gridCont">
+              <div class="gridCell">
+                <label for="first_name">FIRST NAME</label>
+                <input
+                  type="text"
+                  id="first_name"
+                  name="first_name"
+                  required
+                  pattern="[A-Za-z]+"
+                  title="First name should only contain letters."
+                />
+              </div>
+              <div class="gridCell">
+                <label for="last_name">LAST NAME</label>
+                <input
+                  type="text"
+                  id="last_name"
+                  name="last_name"
+                  required
+                  pattern="[A-Za-z]+"
+                  title="Last name should only contain letters."
+                />
+              </div>
+              <div class="gridCell">
+                <label for="mail">EMAIL</label>
+                <input type="email" id="mail" name="mail" required />
+              </div>
+              <div class="gridCell">
+                <label for="number">PHONE NUMBER</label>
+                <input
+                  type="tel"
+                  id="number"
+                  name="number"
+                  required
+                  pattern="[0-9]{10}"
+                  title="Enter a 10-digit phone number."
+                />
+              </div>
+              <div class="gridCell">
+                <label for="pass">PASSWORD</label>
+                <input
+                  type="password"
+                  id="pass"
+                  name="pass"
+                  required
+                  minlength="6"
+                  title="Password should be at least 6 characters."
+                />
+              </div>
+              <div class="gridCell">
+                <label for="confirm_pass">CONFRIM PASSWORD</label>
+                <input
+                  type="password"
+                  id="confirm_pass"
+                  name="confirm_pass"
+                  required
+                  minlength="6"
+                />
+              </div>
+            </div>
+          </div>
+          <button class="createBtn" type="submit">
+            <p>Create Account</p>
+          </button>
+          <div class="log">
+            <p>Already have an account?</p>
+            <a href="#">Log in</a>
+          </div>
+        </form>
+      </div>
     </main>
   </body>
 </html>
